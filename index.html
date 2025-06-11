@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Dia dos Namorados</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 50px 30px;
+      background: linear-gradient(135deg, #ffccff, #ccf2ff);
+      font-family: 'Georgia', serif;
+      color: black;
+      font-size: 22px;
+      line-height: 1.8;
+    }
+
+    h1 {
+      font-weight: bold;
+      font-size: 38px;
+      margin-bottom: 40px;
+    }
+
+    .negrito {
+      font-weight: bold;
+    }
+
+    .curiosidade {
+      margin-bottom: 35px;
+    }
+
+    .carta-titulo {
+      font-weight: bold;
+      font-size: 30px;
+      margin-top: 70px;
+      margin-bottom: 20px;
+    }
+
+    .carta {
+      font-style: italic;
+      white-space: pre-line;
+    }
+
+    .heart {
+      position: fixed;
+      width: 20px;
+      height: 20px;
+      background-color: red;
+      transform: rotate(45deg);
+      animation: fall 7s linear infinite;
+      top: -20px;
+      border-radius: 50%;
+      z-index: 9999;
+      pointer-events: none;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: red;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: -10px;
+      top: 0;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body onload="startHearts()">
+
+  <h1>Curiosidades sobre o amor</h1>
+
+  <p class="curiosidade"><span class="negrito">O amor à distância:</span> <em>Estudos mostram que os relacionamentos à distância podem ser tão felizes e saudáveis quanto os relacionamentos presenciais, desde que haja comunicação e confiança.</em></p>
+
+  <p class="curiosidade"><span class="negrito">O amor pode afetar a memória:</span> <em>Quando estamos apaixonados, o cérebro pode ter dificuldade em lembrar de detalhes importantes, pois a dopamina pode afetar a memória.</em></p>
+
+  <p class="curiosidade"><span class="negrito">A comunicação é a chave:</span> <em>A comunicação aberta e honesta é fundamental em um relacionamento, pois pode ajudar a resolver conflitos e fortalecer o vínculo emocional.</em></p>
+
+  <div class="carta-titulo">CARTA</div>
+
+  <p class="carta">
+Hoje é Dia dos Namorados, e eu não podia deixar passar em branco, né? Queria aproveitar esse dia pra te falar umas coisas que às vezes ficam só no pensamento, mas que você tem que saber.
+
+Desde que você chegou, meu mundo ficou diferente, mudou tudo. Não sei explicar direito, mas parece que tudo ficou mais tranquilo, tudo ficou melhor, tá ligado? Você tem um jeito de ser que me faz querer ser melhor, sabe? Tipo, você me entende, me faz rir, me faz muito feliz e isso já vale mais do que qualquer coisa.
+
+Eu amo demais cada momento que a gente passa conversando, seja zoando, conversando sério ou até de boa. Acho que é isso que faz nosso relacionamento ser tão daora: a gente é unido, é real, não precisa ficar fingindo nada.
+
+Quero que você saiba que tô aqui pro que você precisar. Seja pra rir junto, pra conversar sobre algo que te incomoda, ou quando você tá mal e precisa falar com alguém pra desabafar. Até porque namorar não é só aquelas coisas bonitinhas, é estar junto mesmo nas horas boas e ruins, até porque também não é justo eu rir com você, e você ficar triste sozinha. E eu quero estar do seu lado sempre que você precisar de apoio.
+
+Obrigado por ser essa pessoa incrível que você é, por me fazer rir, por me ajudar a pensar em ser alguém melhor a cada dia, e por simplesmente você ser você. Eu te amo de um jeito que é difícil colocar em palavras, mas que é gigante, impossível descrever ou explicar…
+
+Então é isso, feliz Dia dos Namorados, minha vida, que a gente continue juntos sempre, construindo nosso caminho do jeito que só nós sabemos como, eu te amo muito mesmo.
+  </p>
+
+  <script>
+    function startHearts() {
+      setInterval(() => {
+        const heart = document.createElement('div');
+        heart.classList.add('heart');
+        heart.style.left = Math.random() * 100 + 'vw';
+        heart.style.backgroundColor = Math.random() > 0.5 ? 'red' : 'white';
+        document.body.appendChild(heart);
+        setTimeout(() => {
+          heart.remove();
+        }, 7000);
+      }, 100); // aproximadamente 10 corações por segundo
+    }
+  </script>
+</body>
+</html>
